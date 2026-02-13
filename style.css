@@ -679,3 +679,86 @@ text-align:center;
 }
 
 }
+
+/* MOBILE TYPOGRAPHY IMPROVEMENT */
+@media (max-width:768px){
+
+body{
+font-size:16px;
+line-height:1.6;
+}
+
+/* HERO TEXT */
+.hero h1{
+font-size:56px;
+line-height:1.1;
+}
+
+.hero p,
+.desc{
+font-size:18px;
+}
+
+/* SECTION TITLES */
+.section-title,
+h2{
+font-size:36px;
+}
+
+/* CARD TEXT */
+.program-card h3{
+font-size:24px;
+}
+
+.program-card p,
+.program-card li{
+font-size:16px;
+}
+
+/* ABOUT / CONTENT TEXT */
+.about,
+.coach-content p{
+font-size:17px;
+}
+
+/* BUTTONS */
+.hero-btn,
+.apply-btn{
+font-size:16px;
+padding:14px 22px;
+}
+
+}
+
+/* hamburger hidden on desktop */
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* MOBILE NAVIGATION */
+@media (max-width:768px){
+
+.hamburger{
+display:block;
+}
+
+.menu{
+position:absolute;
+top:70px;
+right:0;
+background:#000;
+width:220px;
+flex-direction:column;
+padding:20px;
+gap:20px;
+transform:translateX(100%);
+transition:0.3s;
+}
+
+.menu.show{
+transform:translateX(0);
+}
+
+}

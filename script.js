@@ -31,3 +31,17 @@ popup.onclick = (e) => {
 };
 
 });
+
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", ()=>{
+menu.classList.toggle("show");
+});
+
+/* close menu after clicking link */
+document.querySelectorAll(".menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+menu.classList.remove("show");
+});
+});
