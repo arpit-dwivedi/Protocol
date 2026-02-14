@@ -1,47 +1,75 @@
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.style.opacity=1
-entry.target.style.transform="translateY(0px)"
-}
-})
-})
+/* =====================================
+   WAIT UNTIL PAGE LOADS
+===================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll("section").forEach(sec=>{
-sec.style.opacity=0
-sec.style.transform="translateY(60px)"
-sec.style.transition="1s"
-observer.observe(sec)
-})
-document.addEventListener("DOMContentLoaded", () => {
+  /* =====================================
+     SECTION SCROLL REVEAL ANIMATION
+  ===================================== */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0px)";
+      }
+    });
+  });
 
-const popup = document.getElementById("popupOverlay");
-const closeBtn = document.querySelector(".close-popup");
+  document.querySelectorAll("section").forEach(section => {
+    section.style.opacity = 0;
+    section.style.transform = "translateY(60px)";
+    section.style.transition = "1s ease";
+    observer.observe(section);
+  });
 
-setTimeout(() => {
-  popup.classList.add("show");
-}, 800);
 
-closeBtn.onclick = () => popup.classList.remove("show");
+  /* =====================================
+     POPUP MODAL
+  ===================================== */
+  const popup = document.getElementById("popupOverlay");
+  const closeBtn = document.querySelector(".close-popup");
 
-popup.onclick = (e) => {
-  if(e.target === popup){
-    popup.classList.remove("show");
+  if (popup) {
+    setTimeout(() => {
+      popup.classList.add("show");
+    }, 800);
   }
-};
 
-});
+  if (closeBtn) {
+    closeBtn.onclick = () => popup.classList.remove("show");
+  }
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
+  if (popup) {
+    popup.onclick = (e) => {
+      if (e.target === popup) {
+        popup.classList.remove("show");
+      }
+    };
+  }
 
-hamburger.addEventListener("click", ()=>{
-menu.classList.toggle("show");
-});
 
-/* close menu after clicking link */
-document.querySelectorAll(".menu a").forEach(link=>{
-link.addEventListener("click", ()=>{
-menu.classList.remove("show");
-});
+  /* =====================================
+     HAMBURGER MENU
+  ===================================== */
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+
+  if (hamburger && menu) {
+
+    // toggle menu
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      hamburger.classList.toggle("active"); // optional animation
+    });
+
+    // close menu when link clicked
+    document.querySelectorAll(".menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        hamburger.classList.remove("active");
+      });
+    });
+
+  }
+
 });
