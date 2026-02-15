@@ -34,7 +34,7 @@
     <a href="#testimonials">Transformations</a>
     <a href="#coach">About Coach</a>
     <a href="#about">About</a>
-    <a href="#contact" class="nav-btn">Book Now</a>
+    <a href="#payment" class="nav-btn">Make Payment</a>
   </nav>
 
 </header>
@@ -43,7 +43,7 @@
 
 
     <!-- HERO -->
-    <section class="hero">
+    <section id="home" class="hero">
       <div class="hero-content">
         <h1>
           THIS IS <br />
@@ -58,18 +58,13 @@
           discipline. Routine. Consistency.
         </p>
 
+        <p class="desc">Still not sure? Book an appointment with our coach and get every question answered.</p>
+        <p class="desc">Made up your mind and ready to start your stay? Move ahead with your booking.</p>
+
         <div class="hero-buttons">
-
-  <button class="hero-btn secondary open-calendly">
-  Know More / Plan a Slot
-</button>
-
-
-  <a href="#contact" class="hero-btn primary">
-    Book a Slot
-  </a>
-
-</div>
+          <button class="hero-btn secondary open-calendly">Make an Appointment</button>
+          <button class="hero-btn primary" type="button">Make Payment</button>
+        </div>
 
       </div>
     </section>
@@ -88,11 +83,8 @@
         </p>
 
         <div class="popup-buttons">
-          <button class="btn-primary open-calendly">Know More</button>
-
-
-
-          <a href="#booking" class="popup-btn primary"> Book a Slot </a>
+          <button class="btn-primary open-calendly">Make an Appointment</button>
+          <a href="#payment" class="popup-btn primary">Make Payment</a>
         </div>
       </div>
     </div>
@@ -106,46 +98,29 @@
         </div>
 
         <div class="terminal">
-          <p>> Decision fatigue is the enemy.</p>
-          <p>> Every meal accounted for.</p>
-          <p>> Structure drives results.</p>
+          <p>✓ Every transformation starts with diagnostics, measurements, and a medically-informed baseline.</p>
+          <p>✓ Every meal is planned and portioned with precision to reduce decision fatigue and improve consistency.</p>
+          <p>✓ Movement is progressive: from short guided walks to high-endurance uphill capacity over the stay.</p>
+          <p>✓ We track outcomes beyond weight loss, including medical test improvements you can see on paper.</p>
+          <p>✓ Discipline-first structure creates sustainable lifestyle change, not temporary motivation spikes.</p>
         </div>
       </div>
     </section>
 
     <!-- PROGRAM OVERVIEW -->
-    <section class="program-overview">
+    <section id="programs" class="program-overview">
       <h2 class="section-title">PROGRAM OVERVIEW</h2>
 
       <div class="program-grid">
-        <!-- 14 DAY SINGLE -->
         <div class="program-card purple">
           <h3>14 DAYS • 5 KG</h3>
-          <p class="stay">Single Stay</p>
+          <p class="stay">Single Accommodation / Shared Accommodation</p>
 
           <ul>
             <li>Fixed routine</li>
             <li>Controlled meals</li>
             <li>Guided workouts</li>
             <li>Full supervision</li>
-          </ul>
-
-          <div class="rules">
-            <p>No alcohol</p>
-            <p>No smoking</p>
-            <p>No transport</p>
-            <p>No discounts</p>
-          </div>
-
-          <button class="apply-btn">Apply Now</button>
-        </div>
-
-        <!-- 14 DAY DOUBLE -->
-        <div class="program-card green">
-          <h3>14 DAYS • 5 KG</h3>
-          <p class="stay">Double Sharing</p>
-
-          <ul>
             <li>Structured daily schedule</li>
             <li>Workout & walks</li>
             <li>Learnings included</li>
@@ -153,21 +128,27 @@
           </ul>
 
           <div class="rules">
+            <p>No alcohol</p>
+            <p>No smoking</p>
+            <p>No transport</p>
+            <p>No discounts</p>
             <p>No foul language</p>
             <p>No collaborations</p>
             <p>No disrespect</p>
-            <p>No smoking</p>
           </div>
 
-          <button class="apply-btn">Apply Now</button>
+          <button class="apply-btn open-program-details" data-program="14" type="button">Get More Details</button>
         </div>
 
-        <!-- 30 DAY DOUBLE -->
         <div class="program-card blue">
           <h3>30 DAYS • 10 KG</h3>
-          <p class="stay">Double Sharing</p>
+          <p class="stay">Single Accommodation / Shared Accommodation</p>
 
           <ul>
+            <li>Maximum supervision</li>
+            <li>Personal transformation</li>
+            <li>Strict routine</li>
+            <li>Long-term habits</li>
             <li>Full lifestyle FAT-TO-FIT</li>
             <li>Accountability tracking</li>
             <li>Structured environment</li>
@@ -179,31 +160,12 @@
             <p>No non-veg</p>
             <p>No transport</p>
             <p>No discounts</p>
-          </div>
-
-          <button class="apply-btn">Apply Now</button>
-        </div>
-
-        <!-- 30 DAY SINGLE -->
-        <div class="program-card orange">
-          <h3>30 DAYS • 10 KG</h3>
-          <p class="stay">Single Accommodation</p>
-
-          <ul>
-            <li>Maximum supervision</li>
-            <li>Personal transformation</li>
-            <li>Strict routine</li>
-            <li>Long-term habits</li>
-          </ul>
-
-          <div class="rules">
             <p>No smoking</p>
             <p>No foul language</p>
             <p>No collaborations</p>
-            <p>No alcohol</p>
           </div>
 
-          <button class="apply-btn">Apply Now</button>
+          <button class="apply-btn open-program-details" data-program="30" type="button">Get More Details</button>
         </div>
       </div>
     </section>
@@ -261,7 +223,7 @@
     </section>
 
     <!-- TRANSFORMATIONS -->
-    <section class="dark section">
+    <section id="testimonials" class="dark section">
       <h2 class="center">REAL PEOPLE. REAL CHANGE.</h2>
 
       <div class="people">
@@ -313,13 +275,51 @@
 
 
     <!-- ABOUT -->
-    <section class="light section center">
+    <section id="about" class="light section center">
       <h2>ABOUT THE FAT-TO-FIT</h2>
       <p class="about">
         A structured immersion program designed to remove decision fatigue,
         rebuild metabolic health, and create permanent behavioural change.
       </p>
     </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="dark section center">
+      <p class="mini center">[ CONTACT ]</p>
+      <h2>STILL THINKING? TALK TO US FIRST.</h2>
+      <p class="about">Need clarity before joining? Schedule a one-on-one appointment with our coach.</p>
+      <button class="hero-btn secondary open-calendly">Make an Appointment</button>
+    </section>
+
+    <!-- PAYMENT -->
+    <section id="payment" class="light section center">
+      <p class="mini center">[ PAYMENT ]</p>
+      <h2>READY TO START YOUR STAY?</h2>
+      <p class="about">Made up your mind? Complete your booking payment here. Razorpay integration will be connected next.</p>
+      <button class="hero-btn primary" type="button">Make Payment</button>
+    </section>
+
+
+    <!-- PROGRAM DETAILS MODAL -->
+    <div id="programDetailsModal" class="popup-overlay">
+      <div class="popup-box program-popup-box">
+        <span class="close-popup close-program-popup">&times;</span>
+        <h2 id="programModalTitle">PROGRAM DETAILS</h2>
+        <p id="programModalDescription"></p>
+
+        <div class="program-gallery" id="programGallery">
+          <img src="assets/image.png" alt="Program stay overview" />
+          <img src="assets/WhatsApp Image 2026-02-12 at 3.07.20 PM.jpeg" alt="Program stay view" />
+        </div>
+
+        <ul class="program-modal-points" id="programModalPoints"></ul>
+
+        <div class="popup-buttons">
+          <button class="btn-primary open-calendly" type="button">Make an Appointment</button>
+          <a href="#payment" class="popup-btn primary">Book Your Stay</a>
+        </div>
+      </div>
+    </div>
 
    <!-- CALENDLY MODAL -->
 <div id="calendlyModal" class="calendly-overlay">
