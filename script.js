@@ -1,75 +1,52 @@
-/* =====================================
-   WAIT UNTIL PAGE LOADS
-===================================== */
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* =====================================
-     SECTION SCROLL REVEAL ANIMATION
-  ===================================== */
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0px)";
-      }
-    });
-  });
-
-  document.querySelectorAll("section").forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = "translateY(60px)";
-    section.style.transition = "1s ease";
-    observer.observe(section);
-  });
-
-
-  /* =====================================
-     POPUP MODAL
-  ===================================== */
+  /* ================= POPUP ================= */
   const popup = document.getElementById("popupOverlay");
-  const closeBtn = document.querySelector(".close-popup");
+  const closePopup = document.querySelector(".close-popup");
 
-  if (popup) {
-    setTimeout(() => {
-      popup.classList.add("show");
-    }, 800);
-  }
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 800);
 
-  if (closeBtn) {
-    closeBtn.onclick = () => popup.classList.remove("show");
-  }
+  closePopup.onclick = () => popup.classList.remove("show");
 
-  if (popup) {
-    popup.onclick = (e) => {
-      if (e.target === popup) {
-        popup.classList.remove("show");
-      }
-    };
-  }
+  popup.onclick = (e) => {
+    if (e.target === popup) popup.classList.remove("show");
+  };
 
 
-  /* =====================================
-     HAMBURGER MENU
-  ===================================== */
+  /* ================= HAMBURGER ================= */
   const hamburger = document.getElementById("hamburger");
   const menu = document.getElementById("menu");
 
-  if (hamburger && menu) {
+  hamburger.onclick = () => {
+    hamburger.classList.toggle("active");
+    menu.classList.toggle("active");
+  };
 
-    // toggle menu
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      hamburger.classList.toggle("active"); // optional animation
-    });
+  document.querySelectorAll(".menu a").forEach(link=>{
+    link.onclick = () => {
+      hamburger.classList.remove("active");
+      menu.classList.remove("active");
+    }
+  });
 
-    // close menu when link clicked
-    document.querySelectorAll(".menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
-        hamburger.classList.remove("active");
-      });
-    });
 
-  }
+  /* ================= CALENDLY ================= */
+  const calendlyModal = document.getElementById("calendlyModal");
+  const openBtns = document.querySelectorAll(".open-calendly");
+  const closeCalendly = document.querySelector(".close-calendly");
+
+  openBtns.forEach(btn=>{
+    btn.onclick = () => calendlyModal.classList.add("show");
+  });
+
+  closeCalendly.onclick = () => calendlyModal.classList.remove("show");
+
+  calendlyModal.onclick = (e)=>{
+    if(e.target === calendlyModal){
+      calendlyModal.classList.remove("show");
+    }
+  };
 
 });
